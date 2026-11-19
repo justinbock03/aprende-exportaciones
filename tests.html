@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pruebas de las fórmulas</title>
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, "Segoe UI", sans-serif; max-width: 860px; margin: 0 auto; padding: 16px; line-height: 1.5; background: Canvas; color: CanvasText; }
+    table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+    th, td { border-bottom: 1px solid #8884; padding: 6px 8px; text-align: left; vertical-align: top; }
+    .ok { color: #2e7d32; font-weight: 700; }
+    .no { color: #c62828; font-weight: 700; }
+    #resumen { font-size: 1.2rem; font-weight: 700; padding: 10px 14px; border-radius: 10px; }
+    #resumen.ok { background: #2e7d3222; }
+    #resumen.no { background: #c6282822; }
+  </style>
+</head>
+<body>
+  <h1>Pruebas de las fórmulas</h1>
+  <p>Comprueba que <code>js/calculos.js</code> reproduce el caso práctico de la guía y los casos borde. Abre este archivo con doble clic.</p>
+  <p id="resumen">Ejecutando…</p>
+  <table><thead><tr><th>Prueba</th><th>Esperado</th><th>Obtenido</th><th>Resultado</th></tr></thead><tbody id="filas"></tbody></table>
+  <p><a href="index.html">← Volver a la web</a></p>
+
+  <script src="js/calculos.js"></script>
+  <script src="data/contenido.js"></script>
+  <script src="data/preguntas.js"></script>
+  <script src="js/tests.js"></script>
+</body>
+</html>
