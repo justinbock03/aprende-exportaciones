@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aprende: Promoción de Exportaciones en el Perú</title>
+  <meta name="description" content="Web de estudio interactiva sobre el Régimen de Promoción de Exportaciones en el Perú: Drawback, saldo a favor del exportador, admisión temporal y Exporta Fácil.">
+  <meta name="theme-color" content="#1f4e79">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script>
+    // Aplica el tema guardado antes de pintar (evita parpadeo).
+    try { var t = localStorage.getItem('rpe-tema'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <button class="btn-icono btn-menu" id="btn-menu" aria-label="Abrir menú de módulos" aria-expanded="false" aria-controls="lateral"></button>
+    <a class="marca" href="#/" aria-label="Inicio">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1f4e79"/><path d="M6 21h20l-3 5H9z" fill="#fff"/><rect x="9" y="14" width="6" height="6" fill="#f2b33d"/><rect x="16" y="14" width="6" height="6" fill="#e9604c"/><rect x="12.5" y="8" width="6" height="6" fill="#5fc3d9"/></svg>
+      <span id="titulo-sitio">Promoción de Exportaciones</span>
+    </a>
+    <span class="espacio"></span>
+    <form class="buscador" role="search" id="form-buscar">
+      <label for="campo-buscar" class="sr-only">Buscar en el contenido</label>
+      <span id="icono-buscar"></span>
+      <input id="campo-buscar" type="search" placeholder="Buscar (ej. SFMB, 180 días)…" autocomplete="off">
+    </form>
+    <span class="progreso-mini" id="progreso-mini" aria-live="polite"></span>
+    <button class="btn-icono btn-buscar-movil" id="btn-buscar-movil" aria-label="Buscar"></button>
+    <button class="btn-icono" id="btn-tema" aria-label="Cambiar tema claro/oscuro"></button>
+  </header>
+
+  <div class="velo" id="velo"></div>
+
+  <div class="contenedor">
+    <nav class="lateral" id="lateral" aria-label="Módulos y herramientas"></nav>
+    <main class="principal" id="contenido" tabindex="-1">
+      <noscript>
+        <p>Esta web necesita JavaScript activado para mostrar el contenido.</p>
+      </noscript>
+    </main>
+  </div>
+
+  <footer class="pie" id="pie"></footer>
+
+  <nav class="barra-inferior" id="barra-inferior" aria-label="Navegación principal"></nav>
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <!-- Datos (se editan sin tocar el código) -->
+  <script src="data/config.js"></script>
+  <script src="data/contenido.js"></script>
+  <script src="data/preguntas.js"></script>
+  <!-- Código -->
+  <script src="js/calculos.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/widgets.js"></script>
+  <script src="js/practica.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Fuentes originales: llevan nombres de integrantes y docente. NO se suben.
+fuentes/
+
+# Archivos del sistema y temporales
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
+capturas/
