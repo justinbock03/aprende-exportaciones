@@ -1,0 +1,157 @@
+/*
+ * BANCO DE PREGUNTAS
+ * ------------------------------------------------------------------
+ * Cada pregunta:
+ *   id    identificador único (texto corto)
+ *   m     id del módulo al que pertenece (ver data/contenido.js)
+ *   tipo  'mc'   opción múltiple  -> ops: [...], c: índice correcto (desde 0)
+ *         'vf'   verdadero/falso  -> c: true | false
+ *         'calc' cálculo          -> r: respuesta numérica, tol: tolerancia, u: unidad
+ *   q     enunciado
+ *   exp   explicación / justificación que se muestra al responder
+ *
+ * Para agregar una pregunta: copia una línea, cambia el id y los textos.
+ * El examen final toma preguntas al azar de todo este banco.
+ */
+window.PREGUNTAS = [
+
+  /* ---------- 0 · Resumen ---------- */
+  { id: 'r1', m: 'resumen', tipo: 'mc', q: '¿Cuáles son los 4 instrumentos que analiza el trabajo?', ops: ['Drawback, saldo a favor, admisión temporal y Exporta Fácil', 'Drawback, TLC, PENX y Exporta Fácil', 'Saldo a favor, Chancay, PROMPERÚ y Drawback', 'IGV, ISC, arancel y Renta'], c: 0, exp: 'Las 4 herramientas son Drawback, saldo a favor del exportador, admisión temporal y Exporta Fácil.' },
+  { id: 'r2', m: 'resumen', tipo: 'mc', q: '¿Cuáles son los 3 ángulos con los que se analiza cada instrumento?', ops: ['Normativo, económico-operativo y contable', 'Legal, político y social', 'Tributario, aduanero y laboral', 'Nacional, regional e internacional'], c: 0, exp: 'Normativo (qué dice la ley), económico-operativo (cómo funciona y cuánto cuesta) y contable (cómo se registra).' },
+  { id: 'r3', m: 'resumen', tipo: 'vf', q: 'Según el trabajo, las mypes son la minoría de exportadores pero aprovechan muy bien los beneficios.', c: false, exp: 'Es al revés: las mypes son la mayoría de exportadores, pero aprovechan poco los beneficios porque exigen mucho orden.' },
+  { id: 'r4', m: 'resumen', tipo: 'mc', q: 'El ángulo económico-operativo responde a la pregunta…', ops: ['¿Cómo funciona en la práctica y cuánto cuesta?', '¿Qué dice la ley?', '¿Cómo se registra?', '¿Quién lo administra?'], c: 0, exp: 'El normativo responde qué dice la ley; el contable, cómo se registra; el económico-operativo, cómo funciona y cuánto cuesta.' },
+  { id: 'r5', m: 'resumen', tipo: 'vf', q: 'El problema central es que los instrumentos exigen documentos, plazos y trazabilidad que las grandes empresas cumplen y las mypes muchas veces no.', c: true, exp: 'Esa es la idea del trabajo en 30 segundos.' },
+
+  /* ---------- 1 · Por qué importa ---------- */
+  { id: 'i1', m: 'por-que-importa', tipo: 'mc', q: '¿Cuánto sumaron las exportaciones de bienes del Perú en 2025 según MINCETUR?', ops: ['US$ 90 082 M', 'US$ 92 833 M', 'US$ 63 000 M', 'US$ 6 987 M'], c: 0, exp: 'US$ 90 082 M (+21 %), 5.º récord seguido. La cifra de US$ 92 833 M es del BCRP (totales).' },
+  { id: 'i2', m: 'por-que-importa', tipo: 'mc', q: '¿Qué porcentaje de las 8 869 empresas exportadoras (ene–set 2025) son MIPYMES según MINCETUR?', ops: ['68 %', '73 %', '5,6 %', '99,4 %'], c: 0, exp: '68 % según MINCETUR. El 73 % es de la CCL (2025), otra fuente.' },
+  { id: 'i3', m: 'por-que-importa', tipo: 'vf', q: 'La promoción de exportaciones consiste en “regalar” beneficios a las mipymes.', c: false, exp: 'No: se trata de crear condiciones para que puedan iniciar, sostener y crecer en el comercio exterior.' },
+  { id: 'i4', m: 'por-que-importa', tipo: 'mc', q: '¿Qué programa de MINCETUR da capacitación y asistencia técnica a mipymes manufactureras?', ops: ['Perú Exporta Industria', 'Exportemos', 'Exporta Fácil', 'Marca Perú'], c: 0, exp: '“Perú Exporta Industria”: en 2026 benefició a 61 empresas de 4 regiones.' },
+  { id: 'i5', m: 'por-que-importa', tipo: 'mc', q: '¿En qué puesto está el Perú entre los exportadores de Sudamérica?', ops: ['3.º', '1.º', '5.º', '10.º'], c: 0, exp: 'Es el 3.º mayor exportador de Sudamérica.' },
+  { id: 'i6', m: 'por-que-importa', tipo: 'vf', q: 'En 2025, el 69 % de las exportadoras de manufacturas eran mipymes.', c: true, exp: 'En 2025 hubo 6 523 exportadoras de manufacturas y el 69 % eran mipymes.' },
+
+  /* ---------- 2 · Problema y objetivos ---------- */
+  { id: 'p1', m: 'problema-objetivos', tipo: 'mc', q: '¿Cuál es la pregunta central del trabajo?', ops: ['¿En qué medida las exigencias normativas y administrativas condicionan el aprovechamiento de los instrumentos por las MIPYMES y su competitividad?', '¿Cuánto exporta el Perú cada año?', '¿Debe eliminarse el Drawback?', '¿Qué país compra más productos peruanos?'], c: 0, exp: 'La pregunta no cuestiona si los beneficios existen, sino si están al alcance de todos por igual.' },
+  { id: 'p2', m: 'problema-objetivos', tipo: 'mc', q: 'Entre 2020 y 2024, el Perú en el Ranking Mundial de Competitividad…', ops: ['cayó del puesto 52 al 63', 'subió del 63 al 52', 'se mantuvo en el 52', 'cayó del 30 al 52'], c: 0, exp: 'Cayó del puesto 52 al 63, detrás de Chile, México, Colombia y Brasil.' },
+  { id: 'p3', m: 'problema-objetivos', tipo: 'mc', q: 'El objetivo específico 3 (“¿Qué frena?”) se responde en los módulos de…', ops: ['Impacto, problemas y propuestas', 'Marco normativo y entidades', 'Drawback y saldo a favor', 'Introducción'], c: 0, exp: 'El objetivo 3 identifica las exigencias que limitan a las mypes: puntos 13, 14 y 15.' },
+  { id: 'p4', m: 'problema-objetivos', tipo: 'vf', q: 'El trabajo cuestiona si los beneficios de exportación existen.', c: false, exp: '“No cuestionamos si los beneficios existen; cuestionamos si están al alcance de todos por igual.”' },
+  { id: 'p5', m: 'problema-objetivos', tipo: 'mc', q: '¿Cuánto crecieron las exportaciones no tradicionales a junio 2025?', ops: ['17 %', '9,2 %', '14,4 %', '24,6 %'], c: 0, exp: 'Subieron 17 % a junio 2025 (US$ 10 371 M en el semestre).' },
+  { id: 'p6', m: 'problema-objetivos', tipo: 'vf', q: 'El objetivo específico 1 busca describir el marco normativo e institucional.', c: true, exp: 'Específico 1: ¿quién y qué norma? Se responde con política comercial, normas y entidades.' },
+
+  /* ---------- 3 · Marco conceptual ---------- */
+  { id: 'c1', m: 'marco-conceptual', tipo: 'mc', q: '¿Qué significa la regla de oro “no se exportan impuestos”?', ops: ['El producto debe salir libre de impuestos peruanos (imposición en el país de destino)', 'Las empresas exportadoras no pagan ningún impuesto en el Perú', 'Solo se cobran impuestos a las importaciones de lujo', 'El exportador paga los impuestos del país comprador'], c: 0, exp: 'Por el criterio de imposición en el país de destino, el impuesto lo cobra el país donde se consume el bien.' },
+  { id: 'c2', m: 'marco-conceptual', tipo: 'mc', q: '¿Qué norma regula la exportación definitiva y dice que no paga tributos (art. 60)?', ops: ['D. Leg. 1053', 'D.S. 067-2006-EF', 'D.S. 104-95-EF', 'R.M. 089-2024-MINCETUR'], c: 0, exp: 'La Ley General de Aduanas, D. Leg. 1053, art. 60.' },
+  { id: 'c3', m: 'marco-conceptual', tipo: 'vf', q: 'En la exportación definitiva, la mercancía sale para usarse o consumirse definitivamente en el exterior.', c: true, exp: 'Ejemplo: arándanos vendidos a Holanda; salen y no regresan.' },
+  { id: 'c4', m: 'marco-conceptual', tipo: 'mc', q: '“Entra hilo importado sin pagar tributos → se teje la prenda → la prenda se exporta.” ¿Qué concepto ilustra?', ops: ['Admisión temporal', 'Drawback', 'Exporta Fácil', 'Saldo a favor'], c: 0, exp: 'Es la admisión temporal para perfeccionamiento activo: el insumo se transforma y sale como producto.' },
+  { id: 'c5', m: 'marco-conceptual', tipo: 'mc', q: 'Un artesano de Ayacucho envía retablos a EE. UU. por SERPOST. ¿Qué concepto usa?', ops: ['Exporta Fácil', 'Drawback', 'Admisión temporal', 'Régimen de promoción'], c: 0, exp: 'Exporta Fácil: exportación de bajo valor por servicio postal, sin agente de aduanas.' },
+  { id: 'c6', m: 'marco-conceptual', tipo: 'vf', q: 'La admisión temporal que analiza el trabajo es la de “reexportación en el mismo estado”.', c: false, exp: 'El trabajo analiza la de perfeccionamiento activo (con transformación). La de reexportación en el mismo estado es otro régimen.' },
+
+  /* ---------- 4 · Política comercial ---------- */
+  { id: 'pc1', m: 'politica-comercial', tipo: 'mc', q: '¿Qué norma aprueba el PENX 2025-2035?', ops: ['R.M. 089-2024-MINCETUR', 'D.S. 010-2009-EF', 'D. Leg. 1053', 'D.S. 055-99-EF'], c: 0, exp: 'El PENX 2025-2035 fue aprobado por la R.M. N.° 089-2024-MINCETUR.' },
+  { id: 'pc2', m: 'politica-comercial', tipo: 'mc', q: '¿Cuál NO es uno de los 4 ejes del PENX?', ops: ['Reducción del IGV', 'Internacionalización', 'Facilitación', 'Capacidades institucionales'], c: 0, exp: 'Los 4 ejes son internacionalización, facilitación, oferta competitiva y capacidades institucionales.' },
+  { id: 'pc3', m: 'politica-comercial', tipo: 'mc', q: '¿Cuántos acuerdos comerciales tiene el Perú al cierre de 2025?', ops: ['22, con más de 50 países', '12, con 30 países', '50, con 22 países', '95, con 167 países'], c: 0, exp: '22 acuerdos con más de 50 países, que cubren cerca del 95 % de los destinos.' },
+  { id: 'pc4', m: 'politica-comercial', tipo: 'mc', q: '¿Qué TLC da arancel cero al 99,3 % de productos agroindustriales?', ops: ['Perú – Unión Europea (2013)', 'Perú – EE. UU. (2009)', 'Perú – China (2010)', 'Ninguno'], c: 0, exp: 'El TLC con la UE (2013); la agroexportación creció más de 80 % desde su vigencia.' },
+  { id: 'pc5', m: 'politica-comercial', tipo: 'vf', q: 'Los TLC bastan para que una empresa compita: no necesita beneficios internos.', c: false, exp: 'Los TLC abren la puerta, pero para cruzarla la empresa debe ser competitiva en precio: ahí entran los instrumentos internos.' },
+  { id: 'pc6', m: 'politica-comercial', tipo: 'vf', q: 'Desde el ángulo contable, los tributos que no se pagan o se recuperan son liquidez para la empresa.', c: true, exp: 'La política de fomento se traduce en menores costos y mejor flujo de caja.' },
+
+  /* ---------- 5 · Marco normativo ---------- */
+  { id: 'n1', m: 'marco-normativo', tipo: 'mc', q: '¿Qué norma crea Exporta Fácil?', ops: ['D.S. 067-2006-EF', 'D.S. 104-95-EF', 'D.S. 010-2009-EF', 'D. Leg. 1716'], c: 0, exp: 'El D.S. 067-2006-EF crea Exporta Fácil.' },
+  { id: 'n2', m: 'marco-normativo', tipo: 'mc', q: '¿Qué norma regula el Drawback (última mod. D.S. 005-2023-EF)?', ops: ['D.S. 104-95-EF', 'D.S. 055-99-EF', 'D.S. 067-2006-EF', 'R.M. 089-2024-MINCETUR'], c: 0, exp: 'El D.S. 104-95-EF: quién califica, cálculo, tasa y plazos.' },
+  { id: 'n3', m: 'marco-normativo', tipo: 'mc', q: '¿Qué artículos del TUO de la Ley del IGV regulan que la exportación no paga IGV y el saldo a favor?', ops: ['Arts. 33-36', 'Arts. 1-5', 'Art. 60', 'Art. 82'], c: 0, exp: 'Arts. 33 al 36 del D.S. 055-99-EF.' },
+  { id: 'n4', m: 'marco-normativo', tipo: 'vf', q: 'El D.S. 010-2009-EF es el Reglamento de la Ley General de Aduanas.', c: true, exp: 'Baja la ley al detalle: procedimientos, plazos, obligaciones y sanciones.' },
+  { id: 'n5', m: 'marco-normativo', tipo: 'vf', q: 'La digitalización del Drawback solo trae ventajas para las mypes.', c: false, exp: 'Es un arma de doble filo: reduce el fraude, pero sube la exigencia técnica para la mype.' },
+  { id: 'n6', m: 'marco-normativo', tipo: 'mc', q: '¿Cuál es la “ley madre” de todo lo aduanero?', ops: ['D. Leg. 1053 – Ley General de Aduanas', 'D.S. 055-99-EF', 'D.S. 067-2006-EF', 'R.M. 089-2024-MINCETUR'], c: 0, exp: 'El D. Leg. 1053 (2008): exportación definitiva, admisión temporal, control.' },
+
+  /* ---------- 6 · Entidades ---------- */
+  { id: 'e1', m: 'entidades', tipo: 'mc', q: '¿Qué entidad fija o modifica por decreto supremo la tasa del Drawback?', ops: ['MEF', 'SUNAT', 'MINCETUR', 'PROMPERÚ'], c: 0, exp: 'El MEF, rector de la política fiscal.' },
+  { id: 'e2', m: 'entidades', tipo: 'mc', q: '¿Qué entidad resuelve el Drawback y devuelve el IGV?', ops: ['SUNAT', 'MEF', 'MINCETUR', 'PROMPERÚ'], c: 0, exp: 'SUNAT ejecuta y controla: “revisa y paga”.' },
+  { id: 'e3', m: 'entidades', tipo: 'mc', q: '¿Qué entidad negocia los TLC y diseña el PENX?', ops: ['MINCETUR', 'PROMPERÚ', 'SUNAT', 'MEF'], c: 0, exp: 'MINCETUR es el ente rector del comercio exterior.' },
+  { id: 'e4', m: 'entidades', tipo: 'mc', q: '¿Qué entidad lleva empresas a ferias como Fruit Logistica (Berlín) y Anuga (Colonia)?', ops: ['PROMPERÚ', 'MINCETUR', 'SUNAT', 'MEF'], c: 0, exp: 'PROMPERÚ, organismo técnico adscrito al MINCETUR.' },
+  { id: 'e5', m: 'entidades', tipo: 'vf', q: 'La devolución exprés del IGV (2 a 5 días) existe desde 2024 para exportadores con buen Perfil de Cumplimiento.', c: true, exp: 'Es una función de SUNAT desde 2024.' },
+  { id: 'e6', m: 'entidades', tipo: 'mc', q: 'Completa: “MINCETUR abre la puerta, PROMPERÚ consigue el cliente, el MEF ___ y SUNAT revisa y paga.”', ops: ['fija cuánto se devuelve', 'negocia los TLC', 'organiza ferias', 'administra Exporta Fácil'], c: 0, exp: 'El MEF fija cuánto se devuelve (tasa del Drawback, reglamentos).' },
+
+  /* ---------- 7 · Los 4 instrumentos ---------- */
+  { id: 'v1', m: 'instrumentos', tipo: 'mc', q: '¿Qué tipo de beneficio es la admisión temporal?', ops: ['Suspensión', 'Devolución', 'Facilitación', 'Exoneración permanente'], c: 0, exp: 'Suspensión: no pagas desde el inicio, pero garantizas.' },
+  { id: 'v2', m: 'instrumentos', tipo: 'mc', q: '¿Qué tipo de beneficio es Exporta Fácil?', ops: ['Facilitación (no es beneficio tributario)', 'Devolución', 'Suspensión', 'Subsidio'], c: 0, exp: 'No devuelve ni suspende tributos: simplifica el trámite.' },
+  { id: 'v3', m: 'instrumentos', tipo: 'vf', q: 'En la devolución, la empresa paga el tributo primero y lo recupera después, por lo que inmoviliza dinero.', c: true, exp: 'Es la desventaja de la devolución (Drawback y saldo a favor).' },
+  { id: 'v4', m: 'instrumentos', tipo: 'mc', q: '¿A quién beneficia más el saldo a favor del exportador?', ops: ['A todo exportador registrado en SUNAT que pagó IGV', 'Solo a quien importa insumos', 'Solo a artesanos', 'Solo al sector textil'], c: 0, exp: 'Al saldo a favor accede todo exportador que pagó IGV en sus compras.' },
+  { id: 'v5', m: 'instrumentos', tipo: 'mc', q: '“Te deja de cobrar” describe a…', ops: ['la admisión temporal', 'el Drawback', 'el saldo a favor', 'Exporta Fácil'], c: 0, exp: 'El Drawback y el IGV te devuelven; la admisión temporal te deja de cobrar; Exporta Fácil te simplifica.' },
+  { id: 'v6', m: 'instrumentos', tipo: 'vf', q: 'El Drawback y el saldo a favor son instrumentos de suspensión.', c: false, exp: 'Ambos son de devolución: se paga y luego se recupera.' },
+
+  /* ---------- 8 · Drawback ---------- */
+  { id: 'd1', m: 'drawback', tipo: 'mc', q: '¿Cómo se calcula el Drawback en el Perú?', ops: ['El menor entre 3 % del FOB y 50 % del costo de producción', 'El arancel exacto pagado', '18 % del FOB', 'El mayor entre 3 % del FOB y 50 % del costo'], c: 0, exp: 'Drawback = menor (3 % × FOB ; 50 % × costo de producción).' },
+  { id: 'd2', m: 'drawback', tipo: 'calc', q: 'Una empresa exporta FOB US$ 100 000 y su costo de producción es US$ 80 000. ¿Cuánto Drawback le corresponde (US$)?', r: 3000, tol: 0.5, u: 'US$', exp: '3 % × 100 000 = 3 000; tope 50 % × 80 000 = 40 000. Se toma el menor: US$ 3 000.' },
+  { id: 'd3', m: 'drawback', tipo: 'calc', q: 'FOB US$ 100 000 y costo de producción US$ 4 000. ¿Cuánto es el Drawback (US$)?', r: 2000, tol: 0.5, u: 'US$', exp: '3 % × 100 000 = 3 000; tope 50 % × 4 000 = 2 000. El menor es US$ 2 000: aquí el tope sí limita.' },
+  { id: 'd4', m: 'drawback', tipo: 'mc', q: '¿En qué plazo debe presentarse la solicitud de Drawback?', ops: ['180 días hábiles desde el embarque', '24 meses desde el levante', '4 años', '30 días hábiles'], c: 0, exp: '180 días hábiles desde el embarque; si se vence, se pierde el beneficio.' },
+  { id: 'd5', m: 'drawback', tipo: 'vf', q: 'Si el CIF de los insumos importados es 60 % del FOB exportado, la empresa sí cumple el límite de insumos.', c: false, exp: 'El CIF de insumos importados debe ser ≤ 50 % del FOB, para que haya valor agregado nacional.' },
+  { id: 'd6', m: 'drawback', tipo: 'mc', q: '¿Cómo se registra el reconocimiento del Drawback?', ops: ['Debe 16 / Haber 75', 'Debe 10 / Haber 40', 'Debe 40 / Haber 10', 'Debe 63 / Haber 10'], c: 0, exp: 'Es un ingreso: 16 Cuentas por cobrar diversas – terceros / 75 Otros ingresos de gestión. Al cobrar: 10 / 16.' },
+  { id: 'd7', m: 'drawback', tipo: 'mc', q: '¿Con qué código se indica la voluntad de acogerse al Drawback en la declaración de exportación?', ops: ['Código 13', 'Código 1649', 'Código 0201', 'Código 63'], c: 0, exp: 'Código 13, para que SUNAT sepa desde el embarque.' },
+  { id: 'd8', m: 'drawback', tipo: 'vf', q: 'En el caso Agualima, la Corte Suprema anuló el reintegro y la multa aplicando el plazo de 180 días hábiles a favor del contribuyente.', c: true, exp: 'Casación N.° 37700-2022: más de 8 años de litigio por S/ 6 365,99 de reintegro y S/ 3 183 de multa.' },
+  { id: 'd9', m: 'drawback', tipo: 'mc', q: '¿De qué antigüedad máxima deben ser los insumos importados?', ops: ['36 meses anteriores', '24 meses', '12 meses', '180 días hábiles'], c: 0, exp: 'Insumos importados en los 36 meses anteriores.' },
+  { id: 'd10', m: 'drawback', tipo: 'vf', q: 'Tras numerar la solicitud, si pasa a revisión documentaria hay 2 días hábiles para sustentar.', c: true, exp: 'Paso 4 del trámite: aprobación automática o revisión documentaria con 2 días hábiles para sustentar; si se aprueba, el abono se ordena en 5 días hábiles.' },
+
+  /* ---------- 9 · Saldo a favor ---------- */
+  { id: 's1', m: 'saldo-a-favor', tipo: 'mc', q: '¿Qué es el SFMB?', ops: ['El SFE menos el IGV de ventas locales', 'Todo el IGV de compras para exportar', 'El 18 % del FOB', 'El arancel pagado'], c: 0, exp: 'SFMB = SFE − IGV de ventas locales. Solo el SFMB se compensa o devuelve.' },
+  { id: 's2', m: 'saldo-a-favor', tipo: 'calc', q: 'Una empresa tiene SFE de S/ 50 000 e IGV de ventas locales de S/ 10 000. ¿Cuál es el SFMB (S/)?', r: 40000, tol: 0.5, u: 'S/', exp: 'SFMB = 50 000 − 10 000 = S/ 40 000 (luego se compara con el límite del 18 % del FOB).' },
+  { id: 's3', m: 'saldo-a-favor', tipo: 'calc', q: 'FOB exportado del mes: S/ 900 000. ¿Cuál es el límite mensual del saldo a favor (S/)?', r: 162000, tol: 0.5, u: 'S/', exp: 'Límite = 18 % × 900 000 = S/ 162 000.' },
+  { id: 's4', m: 'saldo-a-favor', tipo: 'vf', q: 'Si el SFMB supera el 18 % del FOB, el exceso se pierde.', c: false, exp: 'No se pierde: se arrastra como SFE a los meses siguientes.' },
+  { id: 's5', m: 'saldo-a-favor', tipo: 'mc', q: '¿Qué debe presentarse antes de pedir la devolución?', ops: ['El PDB Exportadores (formulario 0201)', 'La DEF', 'El CIP', 'La carta fianza'], c: 0, exp: 'PDB Exportadores (formulario 0201, R.S. 157-2005/SUNAT). Omitirlo ha generado reparos confirmados por el Tribunal Fiscal.' },
+  { id: 's6', m: 'saldo-a-favor', tipo: 'mc', q: 'Al recibir la devolución del IGV, el asiento es…', ops: ['Debe 10 / Haber 40', 'Debe 16 / Haber 75', 'Debe 40 / Haber 75', 'Debe 10 / Haber 16'], c: 0, exp: '10 Efectivo / 40 Tributos por pagar (IGV). No es ganancia, es dinero adelantado que vuelve.' },
+  { id: 's7', m: 'saldo-a-favor', tipo: 'calc', q: 'Un saldo de S/ 100 000 tarda 36 días calendario en devolverse y la empresa se financia al 12 % anual. ¿Cuál es el costo de esperar (S/)? (monto × tasa × días/360)', r: 1200, tol: 0.5, u: 'S/', exp: '100 000 × 12 % × 36/360 = S/ 1 200.' },
+  { id: 's8', m: 'saldo-a-favor', tipo: 'mc', q: '¿Qué formulario virtual se usa para solicitar la devolución?', ops: ['1649 (o, en su defecto, 4949)', '0201', 'DEF', 'Código 13'], c: 0, exp: 'Formulario virtual 1649 o, en su defecto, 4949.' },
+
+  /* ---------- 10 · Admisión temporal ---------- */
+  { id: 'a1', m: 'admision-temporal', tipo: 'mc', q: '¿Cuál es el plazo máximo de la admisión temporal para perfeccionamiento activo?', ops: ['24 meses desde el levante', '180 días hábiles desde el embarque', '36 meses', '4 años'], c: 0, exp: 'Hasta 24 meses desde el levante; prórroga automática si renuevas la garantía antes de vencer.' },
+  { id: 'a2', m: 'admision-temporal', tipo: 'mc', q: '¿Cuál NO puede ingresar por admisión temporal?', ops: ['Combustibles y lubricantes', 'Materias primas', 'Partes y piezas', 'Insumos incorporados al producto'], c: 0, exp: 'No entran mercancías auxiliares (combustibles, lubricantes, repuestos) ni de importación prohibida.' },
+  { id: 'a3', m: 'admision-temporal', tipo: 'mc', q: '¿Cuál NO es una de las 4 salidas del régimen?', ops: ['Pedir Drawback sobre el insumo suspendido', 'Exportar', 'Nacionalizar', 'Destruir'], c: 0, exp: 'Las 4 salidas son exportar, reexportar, nacionalizar o destruir. Pedir Drawback sería doble beneficio.' },
+  { id: 'a4', m: 'admision-temporal', tipo: 'vf', q: 'Si vence el plazo sin ninguna salida, SUNAT da las mercancías por nacionalizadas y ejecuta la garantía.', c: true, exp: 'El beneficio se vuelve deuda: tributos con intereses.' },
+  { id: 'a5', m: 'admision-temporal', tipo: 'mc', q: '¿Qué documento se transmite con los coeficientes de consumo, mermas y desperdicios?', ops: ['CIP (Cuadro de Insumo Producto)', 'RIP', 'DEF', 'PDB'], c: 0, exp: 'El CIP; al exportar se presenta la RIP, que debe coincidir con el CIP.' },
+  { id: 'a6', m: 'admision-temporal', tipo: 'mc', q: '¿Cómo se registra la comisión de la carta fianza?', ops: ['Gasto financiero', 'Costo del insumo', 'Ingreso', 'Cuenta 40'], c: 0, exp: 'La comisión de la carta fianza o póliza es gasto financiero.' },
+  { id: 'a7', m: 'admision-temporal', tipo: 'vf', q: 'Los insumos en admisión temporal se registran en la cuenta 24 o 25 incluyendo los tributos suspendidos.', c: false, exp: 'Se registran sin los tributos suspendidos, con un kardex separado de las existencias nacionalizadas.' },
+
+  /* ---------- 11 · Exporta Fácil ---------- */
+  { id: 'f1', m: 'exporta-facil', tipo: 'mc', q: '¿Cuál es el valor máximo de una DEF?', ops: ['US$ 7 500 FOB por envío', 'US$ 7 500 al mes', 'US$ 2 000 por envío', 'US$ 500 por envío'], c: 0, exp: 'US$ 7 500 FOB por envío (por DEF, no por periodo). Una venta mayor puede dividirse en varias DEF.' },
+  { id: 'f2', m: 'exporta-facil', tipo: 'mc', q: '¿Cuál es el peso máximo por paquete en SERPOST?', ops: ['30 kg', '50 kg', '20 kg', '100 kg'], c: 0, exp: 'Hasta 30 kg; suma de las tres dimensiones ≤ 3 m; ningún lado mayor a 1,5 m.' },
+  { id: 'f3', m: 'exporta-facil', tipo: 'vf', q: 'Exporta Fácil es un beneficio tributario que devuelve el IGV.', c: false, exp: 'Es facilitación: simplifica el trámite y evita el agente de aduanas; no devuelve ni suspende tributos.' },
+  { id: 'f4', m: 'exporta-facil', tipo: 'mc', q: '¿A qué cuenta va el flete postal?', ops: ['Cuenta 63 (gastos de venta, servicios de terceros)', 'Cuenta 75', 'Cuenta 40', 'Cuenta 16'], c: 0, exp: 'Flete postal y seguro → cuenta 63.' },
+  { id: 'f5', m: 'exporta-facil', tipo: 'mc', q: '¿Cuál es el principal valor de Exporta Fácil según el trabajo?', ops: ['Sumar nuevos exportadores y formalizar a los pequeños', 'Mover grandes volúmenes', 'Recaudar más IGV', 'Reemplazar a SERPOST'], c: 0, exp: 'Su aporte en volumen es marginal (menos del 0,05 % de un año de exportaciones), pero amplía la base exportadora.' },
+  { id: 'f6', m: 'exporta-facil', tipo: 'vf', q: 'Para usar Exporta Fácil se necesita RUC, clave SOL y emitir factura o boleta.', c: true, exp: 'Personas naturales o jurídicas con RUC y clave SOL, que emitan factura o boleta.' },
+
+  /* ---------- 12 · Caso práctico ---------- */
+  { id: 'k1', m: 'caso-practico', tipo: 'calc', q: 'Textiles Andinos: FOB US$ 250 000 y TC S/ 3,60. ¿Cuánto es el Drawback en soles?', r: 27000, tol: 0.5, u: 'S/', exp: '3 % × 250 000 = US$ 7 500 (el tope 50 % × 190 000 = 95 000 no limita). 7 500 × 3,60 = S/ 27 000.' },
+  { id: 'k2', m: 'caso-practico', tipo: 'calc', q: 'Textiles Andinos: compras locales con base S/ 420 000. ¿Cuánto IGV pagó en ellas (S/)?', r: 75600, tol: 0.5, u: 'S/', exp: '18 % × 420 000 = S/ 75 600.' },
+  { id: 'k3', m: 'caso-practico', tipo: 'calc', q: 'Textiles Andinos: CIF US$ 70 000, arancel US$ 7 700, TC 3,60. ¿Cuánto IGV + IPM (18 %) pagó en la importación (S/)?', r: 50349.6, tol: 0.05, u: 'S/', exp: 'Base = (70 000 + 7 700) × 3,60 = S/ 279 720; × 18 % = S/ 50 349,60.' },
+  { id: 'k4', m: 'caso-practico', tipo: 'calc', q: 'Textiles Andinos: ¿cuál es el total recuperado (Drawback + IGV) en soles?', r: 152949.6, tol: 0.05, u: 'S/', exp: 'S/ 27 000 + S/ 125 949,60 = S/ 152 949,60 (≈17 % del FOB).' },
+  { id: 'k5', m: 'caso-practico', tipo: 'vf', q: 'En el caso, los S/ 125 949,60 de IGV devuelto son ganancia de la empresa.', c: false, exp: 'No: es IGV que la empresa pagó por adelantado y vuelve como capital de trabajo. El Drawback sí es ingreso.' },
+  { id: 'k6', m: 'caso-practico', tipo: 'calc', q: 'Textiles Andinos: si la devolución de S/ 125 949,60 tarda 42 días calendario y la empresa se financia al 12 % anual, ¿cuál es el costo de esperar (S/)?', r: 1763.29, tol: 0.05, u: 'S/', exp: '125 949,60 × 12 % × 42/360 = S/ 1 763,29.' },
+
+  /* ---------- 13 · Impacto ---------- */
+  { id: 'im1', m: 'impacto', tipo: 'mc', q: '¿Cuánto crecieron las exportaciones no tradicionales del Perú en 2025 (BCRP)?', ops: ['14,4 %', '24,6 %', '17 %', '21 %'], c: 0, exp: 'No tradicionales +14,4 %; tradicionales +24,6 %.' },
+  { id: 'im2', m: 'impacto', tipo: 'mc', q: '¿Qué es lo correcto decir sobre el ranking regional de no tradicionales 2025?', ops: ['Perú y Colombia comparten el primer lugar (14,4 %)', 'Perú es primero solo', 'Colombia es primero solo', 'México es primero'], c: 0, exp: 'Ambos tienen 14,4 %: comparten el primer lugar.' },
+  { id: 'im3', m: 'impacto', tipo: 'mc', q: '¿Cuánto redujo Chancay el viaje marítimo a China?', ops: ['De 35–40 días a 23 días', 'De 60 a 40 días', 'De 23 a 10 días', 'No lo redujo'], c: 0, exp: 'De 35–40 días a 23 días; canalizó más de US$ 3 500 M en su primer año.' },
+  { id: 'im4', m: 'impacto', tipo: 'vf', q: 'Todo el crecimiento exportador de 2025 se debe al régimen de promoción.', c: false, exp: 'También influyó Chancay: el régimen baja el costo tributario y la infraestructura el logístico.' },
+  { id: 'im5', m: 'impacto', tipo: 'vf', q: 'Las exportaciones totales 2025 según el BCRP fueron US$ 92 833 M.', c: true, exp: 'Es la cifra del BCRP (totales); la de MINCETUR (bienes) es US$ 90 082 M.' },
+
+  /* ---------- 14 · Problemas ---------- */
+  { id: 'pr1', m: 'problemas', tipo: 'mc', q: '¿Cuántas SSCO identificó SUNAT al cierre de 2025?', ops: ['78', '3 000', '57 800', '6 700'], c: 0, exp: '78 empresas sin capacidad operativa, que comprometieron más de S/ 3 195 M.' },
+  { id: 'pr2', m: 'problemas', tipo: 'mc', q: 'Las mypes son el 73 % de las exportadoras, pero ¿qué porcentaje del valor exportado generan?', ops: ['5,6 %', '17 %', '68 %', '0,05 %'], c: 0, exp: '5,6 % del valor (CCL, 2025).' },
+  { id: 'pr3', m: 'problemas', tipo: 'vf', q: 'El plazo de devolución del IGV se suspende automáticamente ante cualquier observación documentaria.', c: true, exp: 'Por eso las empresas con observaciones quedan en plazos largos.' },
+  { id: 'pr4', m: 'problemas', tipo: 'mc', q: '¿Qué norma amplió las conductas sancionables con penas de hasta 8 años de prisión?', ops: ['D. Leg. 1716', 'D. Leg. 1053', 'D.S. 189-2024-EF', 'D.S. 014-2026-PRODUCE'], c: 0, exp: 'El D. Leg. 1716.' },
+  { id: 'pr5', m: 'problemas', tipo: 'mc', q: 'Según Anton & Chávez (2023), ¿cuál es la barrera más importante para las pymes agroexportadoras?', ops: ['La falta de conocimiento sobre el potencial del mercado de exportación', 'La logística', 'El tipo de cambio', 'El clima'], c: 0, exp: 'Incluso por encima de la logística.' },
+  { id: 'pr6', m: 'problemas', tipo: 'vf', q: 'Un exportador de buena fe puede ver observada su devolución si compró a un proveedor fantasma sin saberlo.', c: true, exp: 'Es uno de los riesgos del fraude: afecta también a exportadores honestos.' },
+
+  /* ---------- 15 · Propuestas ---------- */
+  { id: 'pp1', m: 'propuestas', tipo: 'mc', q: '¿Qué se propone contra el fraude de empresas fantasma?', ops: ['Cruce automático Aduanas–Tributos Internos para detectar SSCO antes de aprobar', 'Eliminar el Drawback', 'Subir la tasa del Drawback', 'Prohibir las compras locales'], c: 0, exp: 'Detectar proveedores SSCO antes de aprobar el Drawback o el saldo a favor, no después de pagar.' },
+  { id: 'pp2', m: 'propuestas', tipo: 'mc', q: '¿Qué acuerdo internacional respalda las propuestas?', ops: ['Acuerdo sobre Facilitación del Comercio (AFC) de la OMC', 'TLC Perú – China', 'PENX 2025-2035', 'Acuerdo de París'], c: 0, exp: 'El AFC de la OMC, vigente para el Perú desde 2017.' },
+  { id: 'pp3', m: 'propuestas', tipo: 'vf', q: 'Las propuestas plantean crear más beneficios tributarios.', c: false, exp: '“No proponemos crear más beneficios, sino hacer que los que ya existen lleguen mejor, más rápido y a quien más los necesita.”' },
+  { id: 'pp4', m: 'propuestas', tipo: 'mc', q: '¿Dónde se propone dar asesoría gratuita y material simple a las mypes?', ops: ['En los Centros de Desarrollo Empresarial', 'En las aduanas', 'En el MEF', 'En SERPOST'], c: 0, exp: 'Programa conjunto SUNAT-MINCETUR-PROMPERÚ en los Centros de Desarrollo Empresarial.' },
+  { id: 'pp5', m: 'propuestas', tipo: 'mc', q: '¿Qué recomendación se da a las empresas?', ops: ['Expediente por solicitud, control de plazos y verificación de proveedores', 'Dejar de exportar por correo', 'Pedir Drawback y admisión temporal sobre el mismo insumo', 'No presentar el PDB'], c: 0, exp: 'Orden interno: expediente de sustento, control de plazos (180 días hábiles y 24 meses) y verificar proveedores.' },
+  { id: 'pp6', m: 'propuestas', tipo: 'vf', q: 'La OMC documenta reducciones de hasta 87 % en tiempos de espera en algunas fronteras africanas gracias a la digitalización.', c: true, exp: 'Ese dato respalda que una devolución más rápida es posible.' },
+
+  /* ---------- 16 · Repaso ---------- */
+  { id: 'rp1', m: 'repaso', tipo: 'vf', q: 'Se puede usar Drawback y admisión temporal sobre el mismo insumo, salvo que se haya nacionalizado pagando todo.', c: false, exp: 'Al revés: NO se puede (sería doble beneficio), salvo que el insumo se nacionalice pagando todo.' },
+  { id: 'rp2', m: 'repaso', tipo: 'mc', q: 'Si te preguntan por qué hay dos cifras de exportaciones 2025 (90 082 y 92 833), respondes que…', ops: ['son fuentes y mediciones distintas (MINCETUR bienes / BCRP totales)', 'una está mal', 'una es de 2024', 'una incluye solo mypes'], c: 0, exp: 'Fuentes y mediciones distintas.' },
+  { id: 'rp3', m: 'repaso', tipo: 'mc', q: '¿Por qué la digitalización perjudica más a las mypes si es para todos?', ops: ['La regla es igual, pero la capacidad de cumplirla no', 'Porque solo se aplica a mypes', 'Porque las mypes no pueden exportar', 'Porque cobra más impuestos a las mypes'], c: 0, exp: 'Exige sistemas, personal y control interno que la gran empresa tiene y la pequeña no.' },
+  { id: 'rp4', m: 'repaso', tipo: 'vf', q: 'El Drawback se trata como ingreso (cuenta 75) por ser una transferencia del Estado.', c: true, exp: 'Por eso también se analiza su efecto en el Impuesto a la Renta.' },
+  { id: 'rp5', m: 'repaso', tipo: 'mc', q: '¿Qué ocurrió con la tasa del Drawback tras el D.S. 189-2024-EF?', ops: ['Se dispuso bajarla y eliminarla, pero en feb. 2025 se revirtió y sigue en 3 %', 'Se eliminó en 2026', 'Subió a 5 %', 'Quedó en 0,5 %'], c: 0, exp: 'Se dispuso 1 % (oct. 2024), 0,5 % (jul. 2025) y eliminarlo en 2026; en feb. 2025 se revirtió. Riesgo de previsibilidad.' }
+];
